@@ -11,8 +11,9 @@
     {% block content %}
     {% endblock %}
     <footer>
-        <p>Footer content here</p>
+        <p>&copy; {{ year }} North Pole, Inc.</p>
     </footer>
-    <script src="{% static 'script.js' %}"></script>
-</body>
-</html>
+        {% block extra_js %}
+        {% endblock %}
+    </body>
+    </html>

@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding-bottom: 50px;
+
 }
 
 header {
@@ -9,22 +11,13 @@ header {
     padding: 5px;
     text-align: center;
     width: 99%;
-}
-
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    border-radius: 10px;
 }
 
 .post-container {
-    column-count: 3;
     column-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .post {
@@ -36,7 +29,7 @@ footer {
     text-align: center;
     position: relative;
     border-radius: 10px;
-
+    width: 90%;
 }
 
 .button {
@@ -71,7 +64,7 @@ footer {
 .edit-button {
     position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
     background-color: #ff5e62;
     color: white;
     padding: 10px 20px;
@@ -82,4 +75,15 @@ footer {
     cursor: pointer;
     border-radius: 10px;
 
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

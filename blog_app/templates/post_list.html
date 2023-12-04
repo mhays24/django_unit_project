@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% load tz %}
 {% block content %}
+    <center>
+        <h3>Start by adding items down below to create your Christmas List</h3>
+    </center>
     <a href="{% url 'post_new' %}" class="button">Create</a>
+    <button id="sort-by-date" class="button">Sort by Date</button>
+    <button id="sort-by-title" class="button">Sort by Title</button>
+    <input type="text" id="search-bar" placeholder="Search posts...">
     <div class="post-container">
         {% for post in posts %}
-            <div class="post" id="post-{{ post.id }}">
+            <div class="post" id="post-{{ post.id }}" data-created="{{ post.created_at }}" data-title="{{ post.title|escapejs }}">
                 <a href="{% url 'post_delete' post.id %}" class="delete-button">Delete</a>
                 <a href="{% url 'post_edit' post.id %}" class="edit-button">Edit</a>
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content }}</p>
+                <p>Posted on: {{ post.created_at|timezone:"America/Chicago"|date:"F j, Y, P" }}</p>
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+{% block extra_js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'search_and_sort_posts.js' %}"></script>
 {% endblock %}
