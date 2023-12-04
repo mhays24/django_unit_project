@@ -16,7 +16,7 @@
                 <a href="{% url 'post_edit' post.id %}" class="edit-button">Edit</a>
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content }}</p>
-                <p>Posted on: {{ post.created_at|timezone:"America/Chicago"|date:"F j, Y, P" }}</p>
+                <p>Posted on: {{ post.created_at|date:"F j, Y, P" }}</p>
             </div>
         {% endfor %}
     </div>

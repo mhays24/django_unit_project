@@ -1,8 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-    padding-bottom: 50px;
-
 }
 
 header {
@@ -11,7 +9,6 @@ header {
     padding: 5px;
     text-align: center;
     width: 99%;
-    border-radius: 10px;
 }
 
 .post-container {
@@ -78,7 +75,7 @@ header {
 }
 
 footer {
-    background: #333;
+    background: #333
     color: white;
     text-align: center;
     padding: 10px;
