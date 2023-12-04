@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>North Pole Notepad</h1>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <p>Footer content here</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

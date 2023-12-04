@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'post_new' %}" class="button">Create</a>
+    <div class="post-container">
+        {% for post in posts %}
+            <div class="post" id="post-{{ post.id }}">
+                <a href="{% url 'post_delete' post.id %}" class="delete-button">Delete</a>
+                <a href="{% url 'post_edit' post.id %}" class="edit-button">Edit</a>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
